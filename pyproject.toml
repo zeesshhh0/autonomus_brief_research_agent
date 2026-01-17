@@ -1,0 +1,15 @@
+[project]
+name = "autonomus-brief-research-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "ddgs>=9.10.0",
+    "dotenv>=0.9.9",
+    "duckduckgo-search>=8.1.1",
+    "langchain>=1.2.4",
+    "langchain-community>=0.4.1",
+    "langchain-google-genai>=4.2.0",
+    "langgraph>=1.0.6",
+]
