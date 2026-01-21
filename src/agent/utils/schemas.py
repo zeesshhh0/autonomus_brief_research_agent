@@ -37,5 +37,6 @@ class CritiqueResult(BaseModel):
     feedback: str = Field(description="Actionable advice for the Synthesizer")
     pass_check: bool = Field(description="True if score > threshold")
 
-class SearchQueries(BaseModel):
-    queries: list[str] = Field(description="A list of 3-5 distinct search queries to gather information.")
+# 5. Editor Agent Schemas
+class EditorOutput(BaseModel):
+    final_doc: str = Field(description="The final properly formatted markdown document")
