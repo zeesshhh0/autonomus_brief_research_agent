@@ -19,7 +19,7 @@ from .schemas import (
 )
 from .llm import get_llm
 
-from .tools import search_tool
+from .tools import read_webpage, search_tool, search_wikipedia
 
 fast_llm = get_llm(mode="fast")
 smart_llm = get_llm(mode="smart")
@@ -35,7 +35,7 @@ def research_node(state: AgentState):
     
     agent = create_agent(
         model=fast_llm,
-        tools=[search_tool],
+        tools=[search_tool, search_wikipedia],
         response_format=ResearchOutput,
         debug=True,
     )
@@ -66,7 +66,7 @@ def verifier_node(state: AgentState):
     
     agent = create_agent(
         model=fast_llm,
-        tools=[search_tool],
+        tools=[search_tool, search_wikipedia, read_webpage],
         response_format=VerifierOutput,
         debug=True,
     )
